@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richie_Rich007 | Hybrid Artist | Official Site</title>
-    <meta name="description" content="Richie_Rich007 – Hybrid Artist from Southern California. 3 albums out now: 2 Decades of Sorrow, Feral Halos, and Skin & Smoke.">
-    <!-- Open Graph -->
+    <title>Richie_Rich007 | Hybrid Artist | Unchained Beats</title>
+    <meta name="description" content="Richie_Rich007 – Hybrid Artist from Southern California. 16 albums out now. Two new projects dropping August 14.">
     <meta property="og:title" content="Richie_Rich007 | Hybrid Artist">
-    <meta property="og:description" content="3 albums out now – Punk, Pop/Rock, and Dark Country. Stream everywhere.">
-    <meta property="og:image" content="https://i.imgur.com/XcWCJUX.jpeg">
-    <meta property="og:url" content="https://richierich007x.github.io">
+    <meta property="og:description" content="16 albums out now. Two new projects coming August 14.">
+    <meta property="og:url" content="https://unchainedbeats.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -33,8 +31,7 @@
             inset: 0;
             background:
                 radial-gradient(circle at 15% 25%, rgba(139,0,0,0.08) 0%, transparent 30%),
-                radial-gradient(circle at 85% 75%, rgba(139,0,0,0.08) 0%, transparent 30%),
-                repeating-linear-gradient(135deg, transparent 0px, transparent 40px, #0a0000 40px, #0a0000 80px);
+                radial-gradient(circle at 85% 75%, rgba(139,0,0,0.08) 0%, transparent 30%);
             opacity: 0.6;
             pointer-events: none;
             z-index: -3;
@@ -44,423 +41,160 @@
             display: inline-block;
             animation: glow 2s infinite alternate;
         }
-        .glitch-text::before, .glitch-text::after {
-            content: attr(data-text);
-            position: absolute;
-            inset: 0;
-        }
-        .glitch-text::before {
-            animation: glitch1 2.5s infinite alternate-reverse;
-            color: #f87171;
-            z-index: -1;
-        }
-        .glitch-text::after {
-            animation: glitch2 3.5s infinite alternate-reverse;
-            color: #c084fc;
-            z-index: -2;
-        }
         @keyframes glow { 0% { text-shadow: 0 0 20px #f87171; } 100% { text-shadow: 0 0 40px #c084fc; } }
-        @keyframes glitch1 { 0%,100% { clip-path: inset(0); transform: translate(0); } 20% { clip-path: inset(20% 0 30% 0); transform: translate(-5px,5px); } 40% { clip-path: inset(55% 0 25% 0); transform: translate(5px,-5px); } 60% { clip-path: inset(15% 0 65% 0); transform: translate(-5px,0); } 80% { clip-path: inset(85% 0 10% 0); transform: translate(5px,5px); } }
-        @keyframes glitch2 { 0%,100% { clip-path: inset(0); transform: translate(0); } 20% { clip-path: inset(65% 0 15% 0); transform: translate(5px,-5px); } 40% { clip-path: inset(35% 0 45% 0); transform: translate(-5px,5px); } 60% { clip-path: inset(15% 0 85% 0); transform: translate(5px,0); } 80% { clip-path: inset(45% 0 35% 0); transform: translate(-5px,-5px); } }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background: url('https://i.imgur.com/XcWCJUX.jpeg') center 40%/cover fixed;
-            filter: brightness(0.75) contrast(1.2);
-            z-index: -1;
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(185,28,28,0.5) 50%, rgba(0,0,0,0.9) 100%);
-            z-index: -1;
-        }
         .btn-stream {
-            padding: 1rem 2rem;
+            padding: 0.9rem 1.8rem;
             font-weight: bold;
             border-radius: 0.5rem;
             transition: all 0.3s;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
         }
         .btn-stream:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(239,68,68,0.4); }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            background: #111;
-            border-radius: 0.5rem;
-            border: 1px solid #333;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .tiktok-embed {
-            position: relative;
-            padding-bottom: 120%;
-            height: 0;
-            overflow: hidden;
-        }
-        .tiktok-embed blockquote {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        /* Album card styles */
         .album-card {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 1rem;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 1.25rem 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
         }
         .album-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(239,68,68,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(239,68,68,0.15);
+            border-color: rgba(239,68,68,0.4);
         }
-        .album-cover {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-        }
-        /* Tab styles */
-        .tab-btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 1px solid rgba(255,255,255,0.15);
-            background: transparent;
-            color: #aaa;
-        }
-        .tab-btn.active {
-            background: #dc2626;
-            color: white;
-            border-color: #dc2626;
-        }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-        /* Discography grid */
-        .discography-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        .coming-card {
+            background: linear-gradient(135deg, rgba(185,28,28,0.15), rgba(0,0,0,0.6));
+            border: 1px solid rgba(239,68,68,0.4);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
         }
     </style>
 </head>
 <body class="relative">
     <div class="bg-pattern"></div>
     <div class="grain"></div>
+
     <!-- Nav -->
     <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-red-900/50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-display tracking-widest text-white hover:text-red-400">Richie_Rich<span class="text-red-500">007</span></a>
-            <div class="hidden md:flex gap-10 text-lg">
+            <div class="hidden md:flex gap-8 text-lg">
                 <a href="#music" class="hover:text-red-400">Music</a>
                 <a href="#about" class="hover:text-red-400">About</a>
-                <a href="#videos" class="hover:text-red-400">Videos</a>
                 <a href="#connect" class="hover:text-red-400">Connect</a>
             </div>
         </div>
     </nav>
+
     <!-- Hero -->
-    <section class="relative min-h-screen flex items-center justify-center px-6 pt-24">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="relative z-10 text-center max-w-5xl">
-            <p class="text-red-400 uppercase tracking-widest text-xl mb-4 animate-pulse">Hybrid Artist · 3 Albums Out Now</p>
-            <h1 class="font-display text-6xl md:text-9xl font-black mb-4 leading-none">
-                <span class="glitch-text block" data-text="RICHIE">RICHIE</span>
-                <span class="glitch-text block text-red-500" data-text="RICH007">RICH007</span>
+    <section class="relative min-h-[70vh] flex items-center justify-center px-6 pt-28 pb-16">
+        <div class="relative z-10 text-center max-w-4xl">
+            <p class="text-red-400 uppercase tracking-widest text-sm md:text-base mb-4">Hybrid Artist · 16 Albums Out Now</p>
+            <h1 class="font-display text-5xl md:text-8xl font-black mb-4 leading-none">
+                <span class="glitch-text block">RICHIE</span>
+                <span class="glitch-text block text-red-500">RICH007</span>
             </h1>
-            <p class="text-2xl text-gray-300 mb-4 italic">"Punk. Pop. Dark Country. One artist. No limits."</p>
-            <p class="text-lg text-gray-400 mb-12">Oceanside born · Yucca Valley forged · Streaming everywhere</p>
-            <div class="flex flex-wrap justify-center gap-6">
+            <p class="text-xl md:text-2xl text-gray-300 mb-3 italic">"Oceanside born. Yucca Valley forged."</p>
+            <p class="text-gray-400 mb-10">Punk · Dark Pop · R&B · Dark Country · Hip-Hop · No limits.</p>
+            <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-stream bg-green-600 hover:bg-green-500 text-black">Spotify</a>
                 <a href="https://music.apple.com/us/artist/richie-rich007/1878634840" target="_blank" class="btn-stream bg-red-600 hover:bg-red-500 text-white">Apple Music</a>
-                <a href="https://music.amazon.com/albums/B0GPJ5CT8J" target="_blank" class="btn-stream bg-purple-700 hover:bg-purple-600 text-white">Amazon</a>
-                <a href="https://pandora.app.link/IDvEFo2aw1b" target="_blank" class="btn-stream bg-blue-800 hover:bg-blue-700 text-white">Pandora</a>
+                <a href="https://youtube.com/@Richie_Rich007X" target="_blank" class="btn-stream bg-red-700 hover:bg-red-600 text-white">YouTube</a>
+                <a href="https://linktr.ee/richie_rich007" target="_blank" class="btn-stream bg-gray-800 hover:bg-gray-700 text-white border border-gray-600">All Links</a>
             </div>
         </div>
     </section>
-    <!-- Discography Overview -->
-    <section id="music" class="py-20 px-6 bg-black/70">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-display text-5xl md:text-6xl text-center mb-4 text-red-500">Discography</h2>
-            <p class="text-center text-gray-400 text-xl mb-14">Three albums. Three worlds. All raw.</p>
-            <div class="discography-grid mb-16">
-                <!-- Album 1: Skin & Smoke (newest) -->
-                <a href="#skin-smoke" class="album-card block">
-                    <img src="skin-smoke-cover.jpg" alt="Skin & Smoke album cover" class="album-cover">
-                    <div class="p-6">
-                        <p class="text-xs text-amber-400 uppercase tracking-widest mb-1">Latest Release · Apr 13, 2026</p>
-                        <h3 class="font-display text-2xl font-bold mb-1">Skin &amp; Smoke</h3>
-                        <p class="text-gray-400 text-sm">Dark Country · 18 tracks · 1 hr 23 min</p>
-                        <p class="text-gray-500 text-sm mt-2 italic">"Gritty melodies, late-night truths, and hybrid fire."</p>
-                    </div>
-                </a>
-                <!-- Album 2: Feral Halos -->
-                <a href="#feral-halos" class="album-card block">
-                    <img src="feral-halos-cover.jpg" alt="Feral Halos album cover" class="album-cover">
-                    <div class="p-6">
-                        <p class="text-xs text-purple-400 uppercase tracking-widest mb-1">Mar 23, 2026</p>
-                        <h3 class="font-display text-2xl font-bold mb-1">Feral Halos</h3>
-                        <p class="text-gray-400 text-sm">Pop / Rock · 23 tracks · 1 hr 30 min</p>
-                        <p class="text-gray-500 text-sm mt-2 italic">"Wild, reckless, and burning with emotion."</p>
-                    </div>
-                </a>
-                <!-- Album 3: 2 Decades of Sorrow -->
-                <a href="#decades" class="album-card block">
-                    <img src="https://i.imgur.com/XcWCJUX.jpeg" alt="2 Decades of Sorrow album cover" class="album-cover">
-                    <div class="p-6">
-                        <p class="text-xs text-red-400 uppercase tracking-widest mb-1">Feb 19, 2026 · Debut</p>
-                        <h3 class="font-display text-2xl font-bold mb-1">2 Decades of Sorrow</h3>
-                        <p class="text-gray-400 text-sm">Punk / New Wave · 16 tracks · 1 hr 5 min</p>
-                        <p class="text-gray-500 text-sm mt-2 italic">"Heartbreak, desert nights, and loud redemption."</p>
-                    </div>
-                </a>
+
+    <!-- Coming Soon -->
+    <section class="px-6 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl text-center mb-8 text-red-500">Coming August 14</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="coming-card">
+                    <p class="text-xs uppercase tracking-widest text-red-400 mb-2">New Project</p>
+                    <h3 class="font-display text-2xl font-bold mb-1">It's an Obsession</h3>
+                    <p class="text-gray-400 text-sm">August 14, 2026</p>
+                </div>
+                <div class="coming-card">
+                    <p class="text-xs uppercase tracking-widest text-red-400 mb-2">New Project</p>
+                    <h3 class="font-display text-2xl font-bold mb-1">Chicano Living</h3>
+                    <p class="text-gray-400 text-sm">August 14, 2026</p>
+                </div>
             </div>
-            <!-- Spotify Embed -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-4 text-green-400 text-center">Stream on Spotify</h3>
+            <p class="text-center text-gray-500 text-sm mt-6">No details. No covers. Just the drop.</p>
+        </div>
+    </section>
+
+    <!-- Discography -->
+    <section id="music" class="py-16 px-6 bg-black/60">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl text-center mb-3 text-red-500">Discography</h2>
+            <p class="text-center text-gray-400 mb-12">16 albums. All raw. All out now.</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="album-card"><h3 class="font-display text-lg font-bold">No Curfew</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Tragic Matters</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Word Play Vol. 2</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Word Play, Vol. 1</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Put It Down</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">The Struggle Is Real</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Dangerous Curves</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Embrace the Hate</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Sweat & Sin</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Adventures of Tex & Fantasy</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Trials & Tribulations</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Let Me Whisper in Your Ears</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Skin & Smoke</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">Feral Halos</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">2 Decades of Sorrow</h3></div>
+                <div class="album-card"><h3 class="font-display text-lg font-bold">From The First Moments</h3></div>
+            </div>
+
+            <!-- Spotify -->
+            <div class="mt-16">
+                <h3 class="text-xl font-bold mb-4 text-green-400 text-center">Stream on Spotify</h3>
                 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/0vJ5VA1g3RJpXooOXl4GWh" width="100%" height="352" frameborder="0" allow="encrypted-media"></iframe>
             </div>
-            <!-- ===== SKIN & SMOKE ===== -->
-            <div id="skin-smoke" class="mb-20 scroll-mt-24">
-                <div class="flex flex-col md:flex-row gap-10 items-start">
-                    <div class="md:w-1/3 flex-shrink-0">
-                        <img src="skin-smoke-cover.jpg" alt="Skin & Smoke" class="rounded-xl w-full shadow-2xl">
-                        <div class="mt-6 space-y-3">
-                            <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-stream bg-green-600 hover:bg-green-500 text-black w-full justify-center">Spotify</a>
-                            <a href="https://music.apple.com/us/artist/richie-rich007/1878634840" target="_blank" class="btn-stream bg-red-600 hover:bg-red-500 text-white w-full justify-center">Apple Music</a>
-                            <a href="https://pandora.app.link/IDvEFo2aw1b" target="_blank" class="btn-stream bg-blue-800 hover:bg-blue-700 text-white w-full justify-center">Pandora</a>
-                        </div>
-                    </div>
-                    <div class="md:w-2/3">
-                        <p class="text-amber-400 uppercase tracking-widest text-sm mb-2">Latest Release · April 13, 2026</p>
-                        <h2 class="font-display text-4xl md:text-5xl font-black mb-2">Skin &amp; Smoke</h2>
-                        <p class="text-gray-400 mb-6">Dark Country · 18 tracks · 1 hr 23 min · 11777215 Records DK</p>
-                        <p class="text-gray-300 mb-8 text-lg italic">"After 2 Decades of Sorrow and the wild Feral Halos, this one strips it back to skin and smoke. Gritty melodies, late-night truths, and hybrid fire."</p>
-                        <h3 class="text-2xl font-bold mb-4 text-amber-400">Tracklist</h3>
-                        <ol class="list-decimal pl-6 space-y-2 text-base grid md:grid-cols-2 gap-x-8">
-                            <li>Fire In Your Veins <span class="text-gray-500 text-sm">(3:59)</span></li>
-                            <li>Everything's Alright <span class="text-gray-500 text-sm">(4:37)</span></li>
-                            <li>Timeless Desire <span class="text-gray-500 text-sm">(5:34)</span></li>
-                            <li>Let The Fire Burn Slow <span class="text-gray-500 text-sm">(4:24)</span></li>
-                            <li>Something About Your Flame <span class="text-gray-500 text-sm">(4:14)</span></li>
-                            <li>My Last Will <span class="text-gray-500 text-sm">(5:24)</span></li>
-                            <li>Reapers Last Ride <span class="text-gray-500 text-sm">(6:09)</span></li>
-                            <li>Adam's Whimper <span class="text-gray-500 text-sm">(5:59)</span></li>
-                            <li>Twisted Fantasy <span class="text-gray-500 text-sm">(5:55)</span></li>
-                            <li>Come On, Let Me In <span class="text-gray-500 text-sm">(5:07)</span></li>
-                            <li>The More It Pulls You In <span class="text-gray-500 text-sm">(4:53)</span></li>
-                            <li>Reach Through the Phone <span class="text-gray-500 text-sm">(6:11)</span></li>
-                            <li>Fire &amp; Ice <span class="text-gray-500 text-sm">(3:02)</span></li>
-                            <li>Right Before We Blow <span class="text-gray-500 text-sm">(3:12)</span></li>
-                            <li>Dont Wanna See You Tomorrow <span class="text-gray-500 text-sm">(2:22)</span></li>
-                            <li>In The End <span class="text-gray-500 text-sm">(3:07)</span></li>
-                            <li>Your Skin On Mine <span class="text-gray-500 text-sm">(4:05)</span></li>
-                            <li>I Just Wanna Talk To You <span class="text-gray-500 text-sm">(5:17)</span></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-            <!-- Divider -->
-            <hr class="border-red-900/40 mb-20">
-            <!-- ===== FERAL HALOS ===== -->
-            <div id="feral-halos" class="mb-20 scroll-mt-24">
-                <div class="flex flex-col md:flex-row gap-10 items-start">
-                    <div class="md:w-1/3 flex-shrink-0">
-                        <img src="feral-halos-cover.jpg" alt="Feral Halos" class="rounded-xl w-full shadow-2xl">
-                        <div class="mt-6 space-y-3">
-                            <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-stream bg-green-600 hover:bg-green-500 text-black w-full justify-center">Spotify</a>
-                            <a href="https://music.apple.com/us/artist/richie-rich007/1878634840" target="_blank" class="btn-stream bg-red-600 hover:bg-red-500 text-white w-full justify-center">Apple Music</a>
-                            <a href="https://distrokid.com/hyperfollow/richierich007/feral-halos/" target="_blank" class="btn-stream bg-gray-700 hover:bg-gray-600 text-white w-full justify-center">All Platforms</a>
-                        </div>
-                    </div>
-                    <div class="md:w-2/3">
-                        <p class="text-purple-400 uppercase tracking-widest text-sm mb-2">March 23, 2026</p>
-                        <h2 class="font-display text-4xl md:text-5xl font-black mb-2">Feral Halos</h2>
-                        <p class="text-gray-400 mb-6">Pop / Rock · 23 tracks · 1 hr 30 min · 11777215 Records DK</p>
-                        <p class="text-gray-300 mb-8 text-lg italic">"Wild, reckless, and burning with emotion. 23 tracks of feral energy and haunting melodies."</p>
-                        <h3 class="text-2xl font-bold mb-4 text-purple-400">Tracklist</h3>
-                        <ol class="list-decimal pl-6 space-y-2 text-base grid md:grid-cols-2 gap-x-8">
-                            <li>All the way up <span class="text-gray-500 text-sm">(2:36)</span></li>
-                            <li>Be with you <span class="text-gray-500 text-sm">(3:09)</span></li>
-                            <li>Breath with you <span class="text-gray-500 text-sm">(4:32)</span></li>
-                            <li>Crack the code <span class="text-gray-500 text-sm">(4:13)</span></li>
-                            <li>Crashing through the storm <span class="text-gray-500 text-sm">(5:06)</span></li>
-                            <li>Dissolve <span class="text-gray-500 text-sm">(2:36)</span></li>
-                            <li>Everytime I hurt you <span class="text-gray-500 text-sm">(4:01)</span></li>
-                            <li>Fake love letters <span class="text-gray-500 text-sm">(6:06)</span></li>
-                            <li>Feral by design <span class="text-gray-500 text-sm">(2:54)</span></li>
-                            <li>Forever's a long time <span class="text-gray-500 text-sm">(3:10)</span></li>
-                            <li>For you, I'd die <span class="text-gray-500 text-sm">(4:21)</span></li>
-                            <li>Without a psycho <span class="text-gray-500 text-sm">(2:34)</span></li>
-                            <li>Give me a sign <span class="text-gray-500 text-sm">(2:39)</span></li>
-                            <li>Give me all of you <span class="text-gray-500 text-sm">(4:20)</span></li>
-                            <li>Halo in flames <span class="text-gray-500 text-sm">(5:54)</span></li>
-                            <li>I need you <span class="text-gray-500 text-sm">(2:51)</span></li>
-                            <li>Lush &amp; Reckless <span class="text-gray-500 text-sm">(4:47)</span></li>
-                            <li>Making my heart skip a beat <span class="text-gray-500 text-sm">(4:07)</span></li>
-                            <li>Never told a lie <span class="text-gray-500 text-sm">(3:22)</span></li>
-                            <li>Petals <span class="text-gray-500 text-sm">(2:27)</span></li>
-                            <li>Reapers eyes <span class="text-gray-500 text-sm">(5:58)</span></li>
-                            <li>Temptations calling my name <span class="text-gray-500 text-sm">(5:05)</span></li>
-                            <li>When the sky turns grey <span class="text-gray-500 text-sm">(3:34)</span></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-            <!-- Divider -->
-            <hr class="border-red-900/40 mb-20">
-            <!-- ===== 2 DECADES OF SORROW ===== -->
-            <div id="decades" class="scroll-mt-24">
-                <div class="flex flex-col md:flex-row gap-10 items-start">
-                    <div class="md:w-1/3 flex-shrink-0">
-                        <img src="https://i.imgur.com/XcWCJUX.jpeg" alt="2 Decades of Sorrow" class="rounded-xl w-full shadow-2xl">
-                        <div class="mt-6 space-y-3">
-                            <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-stream bg-green-600 hover:bg-green-500 text-black w-full justify-center">Spotify</a>
-                            <a href="https://music.apple.com/us/artist/richie-rich007/1878634840" target="_blank" class="btn-stream bg-red-600 hover:bg-red-500 text-white w-full justify-center">Apple Music</a>
-                            <a href="https://music.amazon.com/albums/B0GPJ5CT8J" target="_blank" class="btn-stream bg-purple-700 hover:bg-purple-600 text-white w-full justify-center">Amazon</a>
-                            <a href="https://pandora.app.link/IDvEFo2aw1b" target="_blank" class="btn-stream bg-blue-800 hover:bg-blue-700 text-white w-full justify-center">Pandora</a>
-                        </div>
-                    </div>
-                    <div class="md:w-2/3">
-                        <p class="text-red-400 uppercase tracking-widest text-sm mb-2">Debut Album · February 19, 2026</p>
-                        <h2 class="font-display text-4xl md:text-5xl font-black mb-2">2 Decades of Sorrow</h2>
-                        <p class="text-gray-400 mb-6">Punk / New Wave · 16 tracks · 1 hr 5 min · 11777215 Records DK</p>
-                        <p class="text-gray-300 mb-8 text-lg italic">"Raw emo punk from Southern California – heartbreak, desert nights, and loud redemption."</p>
-                        <h3 class="text-2xl font-bold mb-4 text-red-400">Tracklist</h3>
-                        <ol class="list-decimal pl-6 space-y-2 text-base grid md:grid-cols-2 gap-x-8">
-                            <li>A girl i never knew <span class="text-gray-500 text-sm">(4:51)</span></li>
-                            <li>Forver i'll love you <span class="text-gray-500 text-sm">(4:04)</span></li>
-                            <li>I got this girl i know <span class="text-gray-500 text-sm">(3:07)</span></li>
-                            <li>I just got bad news today <span class="text-gray-500 text-sm">(4:38)</span></li>
-                            <li>I jist hioe in the quiet of the night <span class="text-gray-500 text-sm">(5:20)</span></li>
-                            <li>I wake up everyday <span class="text-gray-500 text-sm">(2:33)</span></li>
-                            <li>I want a girl <span class="text-gray-500 text-sm">(3:14)</span></li>
-                            <li>I'm waiting here just for this moment <span class="text-gray-500 text-sm">(4:32)</span></li>
-                            <li>Just the other day <span class="text-gray-500 text-sm">(3:33)</span></li>
-                            <li>Just the other day we argued <span class="text-gray-500 text-sm">(6:37)</span></li>
-                            <li>My sorrow <span class="text-gray-500 text-sm">(5:10)</span></li>
-                            <li>No more late nights <span class="text-gray-500 text-sm">(2:40)</span></li>
-                            <li>Our old air <span class="text-gray-500 text-sm">(3:11)</span></li>
-                            <li>The stars are shining bright late tonight <span class="text-gray-500 text-sm">(4:32)</span></li>
-                            <li>The wish <span class="text-gray-500 text-sm">(3:02)</span></li>
-                            <li>They say that the moon <span class="text-gray-500 text-sm">(4:48)</span></li>
-                        </ol>
-                        <p class="mt-6 text-gray-400">16 tracks · 1 hour 5 min · Released February 19, 2026 via DistroKid</p>
-                        <div class="mt-8">
-                            <h3 class="text-2xl font-bold mb-4 text-red-400">Apple Music</h3>
-                            <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/artist/richie-rich007/1878634840?app=music"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
+
     <!-- About -->
-    <section id="about" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-display text-5xl mb-12 text-red-500">About Richie_Rich007</h2>
-            <div class="prose prose-invert prose-lg max-w-none text-left md:text-center">
-                <p class="mb-6">
-                    Richard Darwin Cantos Jr., performing under the stage name Richie_Rich007, is a dynamic artist, songwriter, and composer hailing from Oceanside, California. Emerging from the punk revival scene, Richard crafts music that channels raw emotion, personal introspection, and the highs and lows of life over the past twenty years. His lyrics often explore themes of love, heartbreak, resilience, and daily struggles, delivered with an authentic edge that resonates with listeners seeking genuine storytelling.
-                </p>
-                <p class="mb-6">
-                    Self-taught and self-produced, Richard began his musical journey in his teens, blending punk energy with melodic elements to create a sound that's both haunting and invigorating. Influences from rock, folk, and ambient genres shine through in his compositions, featuring layered instrumentation, evocative vocals, and a DIY ethos that defines his independent spirit.
-                </p>
-                <p class="mb-6">
-                    In 2026, Richard released three albums in rapid succession — <strong>2 Decades of Sorrow</strong> (Punk/New Wave, February 19), <strong>Feral Halos</strong> (Pop/Rock, March 23), and <strong>Skin &amp; Smoke</strong> (Dark Country, April 13) — demonstrating his range as a true hybrid artist spanning multiple genres. All three albums are distributed via DistroKid and 11777215 Records DK, and are available on Spotify, Apple Music, Amazon Music, Pandora, and 25+ streaming platforms worldwide.
-                </p>
-                <p>
-                    As Richie_Rich007, Richard connects with fans through social media, sharing snippets, full videos, and updates on Instagram (@richie_rich007_). With performances at local Southern California venues and collaborations on the horizon, he continues to build his presence in the indie music world, aiming to inspire through unfiltered expression and emotional depth.
-                </p>
-            </div>
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-display text-4xl mb-8 text-red-500">About</h2>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                Richard Darwin Cantos Jr. — performing as <strong>Richie_Rich007</strong> — is a hybrid artist from Oceanside, California, forged in Yucca Valley. 
+                Punk roots. Dark pop energy. R&B heat. Dark country grit. Hip-hop grind.
+            </p>
+            <p class="text-gray-400 leading-relaxed">
+                16 albums deep in 2026. Self-produced. Independent. No filters. 
+                Old MP3 ghosts from when he was 16, remastered through AI fire and real life.
+            </p>
         </div>
     </section>
-    <!-- Videos -->
-    <section id="videos" class="py-20 px-6 bg-black/70">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="font-display text-5xl mb-12 text-red-500">Music Videos &amp; Clips</h2>
-            <p class="text-xl mb-10 text-gray-300">Official videos and promos from all three albums</p>
-            <div class="video-grid">
-                <!-- YouTube Videos -->
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/Kn87HlZGzTc" title="Forever I'll love you - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/b0H-tW7WVNo" title="I wake up everyday - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/hT-0v-X12Z8" title="Our old air - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/g3wbTdPXOtk" title="I just hope in the quiet of the night - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/UNrDX32GbTo" title="A girl I never knew - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/IsX4kLJVyZ0" title="My sorrow - Richie_Rich007" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <!-- TikTok Promo Clip -->
-                <div class="tiktok-embed">
-                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@richie_rich007_/video/ZP8qKEyTy" data-video-id="ZP8qKEyTy">
-                        <section>
-                            <a href="https://www.tiktok.com/@richie_rich007_?refer=embed" target="_blank">@richie_rich007_</a>
-                            Just thought I'd say hi 👋 and let you guys know my album's out right now 2 Decades of sorrow, Richie_Rich007, out now on Spotify and Apple Music and Pandora. <a href="https://www.tiktok.com/tag/distrokid?refer=embed" target="_blank">#Distrokid</a> <a href="https://www.tiktok.com/tag/richie_rich007?refer=embed" target="_blank">#Richie_Rich007</a> <a href="https://www.tiktok.com/tag/yuccavalley?refer=embed" target="_blank">#yuccavalley</a> <a href="https://www.tiktok.com/tag/punkrock?refer=embed" target="_blank">#punkrock</a>
-                        </section>
-                    </blockquote>
-                    <script async src="https://www.tiktok.com/embed/v2/ZP8qKEyTy"></script>
-                </div>
-            </div>
-            <div class="mt-12 flex flex-wrap justify-center gap-6">
-                <a href="https://youtube.com/@richie_rich007x" target="_blank" class="btn-stream bg-red-600 hover:bg-red-500 text-white text-xl">Subscribe on YouTube for More</a>
-                <a href="https://www.tiktok.com/@richie_rich007_" target="_blank" class="btn-stream bg-black hover:bg-gray-800 text-white text-xl border border-gray-600">Follow on TikTok</a>
-            </div>
-        </div>
-    </section>
+
     <!-- Connect -->
-    <section id="connect" class="py-20 px-6 bg-gradient-to-t from-red-950/30 to-black">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-display text-5xl mb-12 text-red-500">Connect</h2>
-            <p class="text-xl mb-10 text-gray-300">Follow for new music, updates, and raw stories.</p>
-            <div class="flex flex-wrap justify-center gap-6">
+    <section id="connect" class="py-16 px-6 bg-gradient-to-t from-red-950/20 to-black">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-display text-4xl mb-8 text-red-500">Connect</h2>
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
                 <a href="https://www.instagram.com/richie_rich007_" target="_blank" class="btn-stream bg-gradient-to-r from-purple-600 to-pink-600 text-white">Instagram</a>
-                <a href="https://x.com/RichardCantosJr" target="_blank" class="btn-stream bg-black hover:bg-gray-800 text-white border border-gray-600">X / Twitter</a>
-                <a href="https://www.tiktok.com/@richie_rich007_" target="_blank" class="btn-stream bg-black hover:bg-gray-800 text-white border border-gray-600">TikTok</a>
-                <a href="https://youtube.com/@richie_rich007x" target="_blank" class="btn-stream bg-red-600 hover:bg-red-500 text-white">YouTube</a>
+                <a href="https://www.tiktok.com/@richie_rich007_" target="_blank" class="btn-stream bg-black border border-gray-600 text-white">TikTok</a>
+                <a href="https://youtube.com/@Richie_Rich007X" target="_blank" class="btn-stream bg-red-600 hover:bg-red-500 text-white">YouTube</a>
+                <a href="https://x.com/RichardCantosJr" target="_blank" class="btn-stream bg-black border border-gray-600 text-white">X</a>
+                <a href="https://linktr.ee/richie_rich007" target="_blank" class="btn-stream bg-gray-800 border border-gray-600 text-white">Linktree</a>
             </div>
-            <div class="mt-12">
-                <h3 class="text-2xl mb-6">Email: richie_rich007x@yahoo.com</h3>
-                <p class="text-gray-400">Booking, collabs, or just to say hi.</p>
-            </div>
+            <p class="text-gray-500 text-sm">Booking / collabs: richie_rich007x@yahoo.com</p>
         </div>
     </section>
+
     <!-- Footer -->
-    <footer class="py-12 px-6 bg-black border-t border-red-900/50 text-center text-gray-500">
-        <p class="font-display text-lg text-gray-400 mb-2">Richie_Rich<span class="text-red-500">007</span></p>
-        <p class="text-sm mb-1">Punk · Pop/Rock · Dark Country · Hybrid Artist</p>
-        <p class="text-sm">© 2026 Richie_Rich007 (Richard Darwin Cantos Jr.). All rights reserved.</p>
-        <p class="mt-2 text-sm">Built with heart (and a little help). Stay loud.</p>
+    <footer class="py-10 px-6 border-t border-red-900/40 text-center text-gray-500 text-sm">
+        <p class="font-display text-lg text-gray-400 mb-1">Richie_Rich<span class="text-red-500">007</span></p>
+        <p>© 2026 Richie_Rich007 · Unchained Beats</p>
     </footer>
 </body>
 </html>
